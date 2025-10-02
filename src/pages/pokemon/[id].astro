@@ -17,6 +17,7 @@ export const getStaticPaths = (async () => {
     })
 }) satisfies GetStaticPaths;
 
+const base = '/Astro-PokemonListApp-SSG';
 const { id } = Astro.params;
 const { name, url } = Astro.props;
 
@@ -30,7 +31,7 @@ const imagePokemon = `https://raw.githubusercontent.com/PokeAPI/sprites/master/s
     image={imagePokemon}>
     <section class="mt-10 mx-10 flex flex-col justify-center items-center" >
         <div>
-            <a href="/">Regresar</a>
+            <a href={`${base}/`}>Regresar</a>
             <h1 class="text-5xl capitalize">{name}</h1>
         </div>
 

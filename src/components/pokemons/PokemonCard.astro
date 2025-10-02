@@ -5,6 +5,7 @@ interface Props {
     isBig?: boolean;
 }
 
+const base = '/Astro-PokemonListApp-SSG';
 const { url, name, isBig = false } = Astro.props;
 const pokemonId = url.split('/').at(-2);
 const pokemonUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonId}.png`
@@ -36,8 +37,8 @@ const pokemonUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/spr
         ]}>#{pokemonId} { name }</span>
     
     <div class="inline-flex p-2 gap-2">
-        <a href={`/pokemons/${name}`} class="a-search-gray">Nombre</a>
-        <a href={`/pokemon/${pokemonId}`} class="a-search-red">Id</a>
+        <a href={`${base}/pokemons/${name}`} class="a-search-gray">Nombre</a>
+        <a href={`${base}/pokemon/${pokemonId}`} class="a-search-red">Id</a>
     </div>
 
 </div>

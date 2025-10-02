@@ -4,14 +4,15 @@ interface Props {
 }
 
 const { currentPath } = Astro.props;
+const base = '/Astro-PokemonListApp-SSG';
 ---
 <div class="flex justify-center gap-5 my-5" >
     <a 
-        href="/"
+        href={`${base}/`}
         class:list={[{ active: currentPath === '/' }]}> 
         Listado Básico 
     </a>
-    <a  href="/pokemons/1"
+    <a  href={`${base}/pokemons/1`}
         class:list={[{ active: /^\/pokemons\/\d+$/.test(currentPath) }]}>
         Listado con Paginación
     </a>
