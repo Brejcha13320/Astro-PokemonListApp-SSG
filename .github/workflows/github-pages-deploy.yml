@@ -36,15 +36,12 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: dist/
-          destination: ./_site
-      - name: List built site
-        run: ls -R ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: |
+            dist/**
+            dist/**/.*
 
   # Deployment job
   deploy:
