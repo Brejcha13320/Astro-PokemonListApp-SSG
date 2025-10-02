@@ -41,6 +41,8 @@ jobs:
         with:
           source: dist/
           destination: ./_site
+      - name: List built site
+        run: ls -R ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
