@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from "astro:transitions";
 import { siteInfo } from "@constants/site-info";
-import NavBar from "@components/navbar/NavBar.astro";
+import NavBar from "@components/shared/NavBar.astro";
 import "@styles/global.css";
 
 interface Props {
@@ -38,9 +38,9 @@ const currentPath = Astro.url.pathname;
 		<title>{ title }</title>
 		<ClientRouter></ClientRouter>
 	</head>
-	<body class="bg-slate-800 text-slate-100 m-auto max-w-3xl" >
-        <main class="my-10">
-			<NavBar currentPath={currentPath} ></NavBar>
+	<body class="bg-slate-800 text-slate-100 flex flex-col min-h-screen" >
+		<NavBar></NavBar>
+        <main class="my-10 mx-auto flex-grow w-full max-w-5xl px-4">
             <slot></slot>
         </main>
 	</body>

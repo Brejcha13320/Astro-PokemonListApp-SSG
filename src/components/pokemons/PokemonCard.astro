@@ -35,9 +35,14 @@ const pokemonUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/spr
             }
         ]}>#{pokemonId} { name }</span>
     
-    <div class="inline-flex p-2 gap-2">
+    <div
+        class:list={[
+            'p-2 gap-2',
+            { 'inline-flex': !isBig },
+            { hidden: isBig }
+        ]}>
         <a href={`/pokemons/${name}`} class="a-search-gray">Nombre</a>
-        <a href={`/pokemon/${pokemonId}`} class="a-search-red">Id</a>
+        <a href={`/pokemon/${pokemonId}`} class="a-search-gray">Id</a>
     </div>
 
 </div>
@@ -46,8 +51,5 @@ const pokemonUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/spr
     @reference '@styles/global.css';
     .a-search-gray {
         @apply inline-flex items-center rounded-md bg-gray-400/10 px-2 py-1 text-xs font-medium text-gray-400 inset-ring inset-ring-gray-400/20;
-    }
-    .a-search-red {
-        @apply inline-flex items-center rounded-md bg-red-400/10 px-2 py-1 text-xs font-medium text-red-400 inset-ring inset-ring-red-400/20
     }
 </style>

@@ -9,3 +9,8 @@ export interface Result {
     name: string;
     url: string;
 }
+
+export interface FavoritePokemon {
+    id: number,
+    name: string,
+}
